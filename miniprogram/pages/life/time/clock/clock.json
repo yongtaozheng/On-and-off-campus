@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "番茄钟",
+    "navigationStyle": "custom",
+
+  "usingComponents": {
+    "modal": "../../components/modal/modal",
+    "ask": "../../components/ask/ask"
+  }
+}

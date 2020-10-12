@@ -1,0 +1,113 @@
+page {
+  background-color: white;
+}
+
+.button {
+  justify-content: center;
+  display: flex;
+  background: rgba(0, 0, 0, 0);
+}
+
+.image {
+  width: 300rpx;
+  height: 300rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+
+.topImage {
+  width: 100vw;
+  height: 75.1vw;
+}
+
+.plan {
+  height: 80rpx;
+  width: 100%;
+}
+
+.plan .text {
+  float: left;
+  width: 50%;
+  white-space: pre-wrap;
+  margin-left: 60rpx;
+}
+
+.plan .change {
+  float: right;
+  width: 102.86rpx;
+  height: 60rpx;
+  margin-right: 60rpx;
+}
+
+.myplan {
+  width: 96%;
+  height: 80rpx;
+  margin: 0 auto;
+  border: gray solid;
+  border-width: 1px;
+  border-radius: 15px;
+  margin-top: 30rpx;
+}
+
+.myplan .left {
+  margin-top: 20rpx;
+  float: left;
+  margin-left: 30rpx;
+  display: flex;
+}
+
+.left .center {
+  margin-left: 15rpx;
+  color: gray;
+}
+
+.myplan .right {
+  margin-top: 20rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+
+.radio-list {
+  width: 100%;
+  margin-left: 30rpx;
+}
+
+.radio-list .right {
+  float: right;
+  margin-right: 60rpx;
+}
+
+.tui-gallery-list{
+  height: 60rpx;
+  margin-top: 30rpx;
+}
+
+.tui-number-group {
+  float: left;
+  margin-left: 15rpx;
+  display: table;
+  table-layout: fixed;
+  width: 300rpx;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  overflow: hidden;
+}
+
+.tui-number-cell {
+  display: table-cell;
+  line-height: 1.7;
+  border-radius: 0;
+}
+
+button::after {
+  border-bottom: none;
+  border-top: none;
+  border-radius: 0;
+}
+
+.tui-gallery-list .text{
+  margin-top: 10rpx;
+  float: left;
+}

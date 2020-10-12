@@ -1,0 +1,75 @@
+<view class='topTabSwiper'>
+  <view class='tab {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>已加入课程</view>
+  <view class='tab {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>已创建课程</view>
+  <view class='tab {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>待交作业</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper' style="height:96vh;" duration="300" bindchange="bindchange">
+
+  <swiper-item catchtouchmove='catchTouchMove' class="scroll-list">
+    <scroll-view scroll-y="true">
+      <view class="book-content">
+        <view wx:for="{{allSelect}}" wx:key="id" wx:for-item="select">
+          <view wx:for="{{allClass}}" wx:key="id" wx:for-item="item">
+            <view class="book-list" wx:if="{{item._id == select}}" bindtap="coursedetail" data-teacher="{{item.teacher}}" data-cname="{{item.coursename}}" data-cid="{{item._id}}" data-img="{{item.img}}" data-tid="{{item.teacherid}}" data-n="{{item.number}}" data-abstract="{{item.abstract}}">
+
+              <view class="book-image">
+                <image src="{{item.img}}" mode="aspectFit"></image>
+              </view>
+              <view class="book-info">
+                <view>课程：{{item.coursename}}</view>
+                <view>创建人：{{item.teacher}}</view>
+                <view>学生人数：{{item.number}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+
+  <swiper-item catchtouchmove='catchTouchMove'>
+
+    <scroll-view scroll-y="true" class="scroll-list">
+      <view class="book-content">
+        <view wx:for="{{allCreateClass}}" wx:key="id">
+          <view class="book-list" bindtap="coursedetail" data-teacher="{{item.teacher}}" data-cname="{{item.coursename}}" data-cid="{{item._id}}" data-img="{{item.img}}" data-tid="{{item.teacherid}}" data-n="{{item.number}}" data-abstract="{{item.abstract}}">
+            <view class="book-image">
+              <image src="{{item.img}}" mode="aspectFit"></image>
+            </view>
+            <view class="book-info">
+                <view>课程：{{item.coursename}}</view>
+                <view>创建人：{{item.teacher}}</view>
+                <view>学生人数：{{item.number}}</view>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+
+  <swiper-item catchtouchmove='catchTouchMove'>
+    <scroll-view scroll-y="true" class="scroll-list">
+      <view class="book-content">
+        <view wx:for="{{courseHomeworkList}}" wx:key="id">
+          <view wx:if="{{item.state == 0}}" class="book-list" bindtap="viewCourseHomework" data-title="{{item.title}}" data-date="{{item.date}}" data-time="{{item.time}}" data-homeworkid="{{item._id}}" data-isComplete="{{item.state}}" data-submitid="{{item.submitid}}" data-myclassname="{{myclassname}}">
+            <view class="book-image">
+              <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework1.png" mode="aspectFit"></image>
+            </view>
+            <view class="book-info">
+                <view>{{item.title}}</view>
+                <view>截止时间：{{item.date}} {{item.time}}</view>
+                <view>未交</view>
+            </view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

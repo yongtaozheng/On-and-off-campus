@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true, 
+  "backgroundColor":"cornsilk",
+  "navigationBarTitleText": "课程管理"
+}

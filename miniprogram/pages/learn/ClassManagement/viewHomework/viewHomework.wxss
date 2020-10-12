@@ -1,0 +1,137 @@
+.content {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  word-break:break-all;
+}
+
+.content .title {
+  padding-top: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.content .date {
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #777;
+  font-size: 13px;
+}
+
+.content .content {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.line {
+  background: #e0e3da;
+  opacity: 0.8;
+  width: 90%;
+  height: 3rpx;
+  z-index: 10;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+.image1 {
+  width: 300rpx;
+  height: 300rpx;
+  position: fixed;
+  bottom: -40px;
+  display: flex;
+}
+
+.scroll-list{
+  height: 100%;
+}
+
+.button {
+  justify-content: center;
+  display: flex;
+}
+
+.upload {
+  margin-top: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.answer {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  display: flex;
+  height: 150px;
+}
+
+.choose {
+  border: 1px solid;
+  width: 100px;
+  height: 100px;
+  color: #ccc;
+  transition: color 0.25s;
+  position: relative;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.choose .text {
+  margin-top: 10px;
+  color: black;
+  width: 100px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.choose image {
+  width: 80%;
+  height: 80%;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.add {
+  margin-bottom: 10px;
+  border: 1px solid;
+  width: 100px;
+  height: 100px;
+  color: #ccc;
+  transition: color 0.25s;
+  position: relative;
+  border-radius: 15px;
+}
+
+.add::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  transform: translate(-50%, -50%);
+  border-top: 2px solid;
+}
+
+.add::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  border-left: 2px solid;
+}
+
+.blank{
+  height: 70px;
+}

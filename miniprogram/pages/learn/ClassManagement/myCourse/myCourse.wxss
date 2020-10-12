@@ -1,0 +1,298 @@
+/* miniprogram/pages/learn/ClassManagement/myClass/myClass.wxss */
+
+.Title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-around;
+}
+
+.banner-scroll {
+  margin-top: 2px;
+}
+
+.banner-scroll repeat {
+  margin-bottom: 10px;
+}
+
+.nav-name {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 16px;
+  color: #2b2e33;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+}
+
+.nav-hover {
+  color: #6cf;
+  border-bottom: 2px solid #6cf;
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  width: 100%;
+}
+
+.scroll-list {
+  height: 100%;
+}
+
+.date {
+  font-size: 14px;
+  color: #eee;
+}
+
+.list-box {
+  width: 100%;
+  padding: 0;
+}
+
+.list-item {
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.list-item .content {
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.list-item .content .coverImage {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  float: left;
+}
+
+.list-item .content .inner {
+  float: left;
+  padding-left: 25rpx;
+}
+
+.list-item .del {
+  width: 50rpx;
+  height: 50rpx;
+  right: 50rpx;
+  bottom: 10rpx;
+}
+
+.title1 {
+  font-size: 20px;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-around;
+}
+
+.banner-scroll {
+  margin-top: 2px;
+}
+
+.banner-scroll repeat {
+  margin-bottom: 10px;
+}
+
+.nav-name {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 16px;
+  color: #2b2e33;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+}
+
+.nav-hover {
+  color: #6cf;
+  border-bottom: 2px solid #6cf;
+}
+
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  width: 100%;
+}
+
+.scroll-list {
+  height: 100%;
+}
+
+.date {
+  font-size: 14px;
+  color: #eee;
+}
+
+.list-box {
+  width: 100%;
+  padding: 0;
+}
+
+.list-item {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.list-item .content {
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.list-item .content .coverImage {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  float: left;
+}
+
+.list-item .content .inner {
+  float: left;
+  padding-left: 25rpx;
+}
+
+.list-item .del {
+  width: 50rpx;
+  height: 50rpx;
+  right: 50rpx;
+  bottom: 10rpx;
+}
+
+.title1 {
+  font-size: 20px;
+}
+
+.tab {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.topTabSwiper {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #6cf;
+  color: #6cf;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 50%;
+}
+
+.remove {
+  width: 160rpx;
+  height: 100%;
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: -160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-content {
+  margin-top: 10rpx;
+}
+
+.book-list {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  /* margin-top: 20rpx; */
+  background-color: #fff;
+  border: 0;
+  border-radius: 15px;
+}
+
+.book-image {
+  flex: 0 0 32%;
+  box-sizing: border-box;
+  min-height: 242rpx;
+}
+
+.book-image image {
+  height: 182rpx;
+  width: 182rpx;
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.book-info {
+  background-color: #fff;
+  flex: 0 0 66%;
+  box-sizing: border-box;
+  height: 226rpx;
+  margin-top: 38rpx;
+  margin-left: 38rpx;
+}
+
+.book-info view {
+  padding-bottom: 10px;
+  display: block;
+  font-size: 30rpx;
+  width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.line {
+  width: 100%;
+  height: 5px;
+  }

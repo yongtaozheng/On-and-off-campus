@@ -1,0 +1,286 @@
+<!-- 如果身份为教师 -->
+<view wx:if="{{openid == tid}}">
+
+  <view class='topTabSwiper'>
+    <view class='tab {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
+      <image src="{{image1}}" data-current="0" class="tapImage"></image>
+      <text data-current="0" class="tabText">\n课程简介</text>
+    </view>
+    <view class='tab {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>
+      <image src="{{image2}}" data-current="1" class="tapImage"></image>
+      <text data-current="1" class="tabText">\n课程作业</text>
+    </view>
+    <view class='tab {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>
+      <image src="{{image3}}" data-current="2" class="tapImage"></image>
+      <text data-current="2" class="tabText">\n教学资源</text>
+    </view>
+  </view>
+
+  <swiper current="{{currentData}}" class='swiper' style="height:80vh;" duration="300" bindchange="bindchange">
+    <!-- 课程简介 -->
+    <swiper-item>
+      <view class="hight">
+        <view class="abstract">{{abstract}}\n</view>
+      </view>
+      <view class="blank"></view>
+      <view class="button">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/createClass.png" mode="aspectFit" class="image1" bindtap="createclass"></image>
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/审核.png" mode="aspectFit" class="image3" bindtap="checkJoin">
+          <view class="reddot" wx:if="{{newSelect}}"></view>
+        </image>
+
+      </view>
+    </swiper-item>
+
+    <!-- 作业 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scroll-list">
+        <view class="book-content">
+          <view wx:for="{{courseHomeworkList}}" wx:key="id">
+            <view class="book-list" bindtap="viewHomeworkClass" data-title="{{item.title}}" data-content="{{item.content}}" data-date="{{item.date}}" data-time="{{item.time}}" data-homeworkid="{{item._id}}">
+              <view class="book-image">
+                <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework1.png" mode="aspectFit"></image>
+              </view>
+              <view class="book-info">
+                <view>{{item.title}}</view>
+                <view>截止时间：{{item.date}} {{item.time}}</view>
+                <view>完成状态：{{item.submitNum}}/{{n}}</view>
+
+              </view>
+
+            </view>
+            <view class="line"></view>
+          </view>
+        </view>
+        <view class="blank"></view>
+        <view class="button">
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/createHomework.png" mode="aspectFit" class="image2" bindtap="createHomework"></image>
+        </view>
+      </scroll-view>
+
+
+    </swiper-item>
+
+    <!-- 资源 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scroll-list">
+
+        <view class="book-content">
+          <view wx:for="{{courseResources}}" wx:key="id">
+            <view class="book-list" bindtap="previewFile" data-filename="{{item.fileName}}" data-id="{{item._id}}" data-time="{{item.time}}" data-path="{{item.path}}" data-fileID="{{item.fileID}}" data-="">
+              <view class="book-image">
+                <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/下载.png" mode="aspectFit"></image>
+              </view>
+              <view class="book-info">
+                <view>{{item.fileName}}</view>
+                <view>发布人：{{teacher}}</view>
+                <view>上传时间：{{item.time}}</view>
+              </view>
+            </view>
+            <view class="line"></view>
+          </view>
+        </view>
+        <view class="blank"></view>
+        <view class="button">
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/上传资源.png" mode="aspectFit" class="image2" bindtap="listenerButton"></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+  </swiper>
+
+</view>
+
+
+<!--如果是学生-->
+<view wx:if="{{openid != tid }}">
+  <!--已加入课程-->
+  <view wx:if="{{flag == 1 }}">
+    <view class='topTabSwiper'>
+      <view class='tab {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
+        <image src="{{image1}}" data-current="0" class="tapImage"></image>
+        <text data-current="0" class="tabText">\n课程简介</text>
+      </view>
+      <view class='tab {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>
+        <image src="{{image2}}" data-current="1" class="tapImage"></image>
+        <text data-current="1" class="tabText">\n课程作业</text>
+      </view>
+      <view class='tab {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>
+        <image src="{{image3}}" data-current="2" class="tapImage"></image>
+        <text data-current="2" class="tabText">\n教学资源</text>
+      </view>
+    </view>
+
+    <swiper current="{{currentData}}" class='swiper' style="height:80vh;" duration="300" bindchange="bindchange">
+      <!-- 课程简介 -->
+      <swiper-item>
+        <view class="hight">
+          <view class="abstract">{{abstract}}</view>
+        </view>
+        <view class="button">
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/outClass.png" mode="aspectFit" class="image1" bindtap="quitCourse"></image>
+        </view>
+      </swiper-item>
+
+      <!-- 作业 -->
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-list">
+
+          <view class="book-content">
+            <view wx:for="{{courseHomeworkList}}" wx:key="id">
+              <view class="book-list" bindtap="viewCourseHomework" data-title="{{item.title}}" data-date="{{item.date}}" data-time="{{item.time}}" data-isComplete="{{item.state}}" data-homeworkid="{{item._id}}" data-submitid="{{item.submitid}}" data-myclassname="{{myclassname}}">
+                <view class="book-image">
+                  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework1.png" mode="aspectFit"></image>
+                </view>
+                <view class="book-info">
+                  <view>{{item.title}}</view>
+                  <view>截止时间：{{item.date}} {{item.time}}</view>
+                  <view wx:if="{{item.state == 0}}">未交</view>
+                  <view wx:if="{{item.state == 1}}">待批阅</view>
+                  <view wx:if="{{item.state == 2}}">已完成</view>
+                </view>
+              </view>
+              <view class="line"></view>
+            </view>
+          </view>
+        </scroll-view>
+
+      </swiper-item>
+
+      <swiper-item>
+        <scroll-view scroll-y="true" class="scroll-list">
+          <view class="book-content">
+            <view wx:for="{{courseResources}}" wx:key="id">
+              <view class="book-list" bindtap="previewFile" data-filename="{{item.fileName}}" data-id="{{item._id}}" data-time="{{item.time}}" data-path="{{item.path}}" data-fileID="{{item.fileID}}">
+                <view class="book-image">
+                  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/下载.png" mode="aspectFit"></image>
+                </view>
+                <view class="book-info">
+                  <view>{{item.fileName}}</view>
+                  <view>发布人：{{teacher}}</view>
+                  <view>上传时间：{{item.time}}</view>
+                </view>
+              </view>
+              <view class="line"></view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+    </swiper>
+  </view>
+
+  <!-- 如果没有加入课程 -->
+  <view wx:if="{{flag != 1 }}">
+    <view class="header-bg"></view>
+    <view class="book-content">
+      <view class="book-list">
+        <view class="book-image">
+          <image src="{{img}}" mode="aspectFit" class="image"></image>
+        </view>
+        <view class="book-info">
+          <view class="title">{{cname}}</view>
+          <view>创建人:{{teacher}}</view>
+          <view>学生人数：{{n}}</view>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="abstract">{{abstract}}\n</view>
+      <view wx:if="{{flag == 0}}">
+        <view class="button">
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/待审核.png" mode="aspectFit" class="image1"></image>
+        </view>
+      </view>
+      <view wx:if="{{flag == 2}}">
+        <view wx:if="{{array.length == 0}}" class="button">
+          <view wx:if="{{openid != tid}}" class="without">老师还未创建班级，请先联系老师创建班级
+          </view>
+        </view>
+        <view class="button" wx:else>
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/checkCourse/加入.png" mode="aspectFit" class="image1" bindtap="joincourse"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<modal hidden="{{hiddenmodalput}}" title="加入课程" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <text class="tt">姓名</text>
+  <input class="in" name="stuname" type='text' bindinput="stuname" placeholder="请输入您的姓名" auto-focus/>
+  <text class="tt">学号</text>
+  <input class="in" name="stunum" type='text' bindinput="stunum" placeholder="请输入您的学号" auto-focus/>
+  <text class="tt">班级</text>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+
+  </picker>
+  <view class="floot" />
+</modal>
+
+<modal hidden="{{hiddenmodalput1}}" title="创建班级" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm1">
+  <text class="tt">班级名称</text>
+  <input class="in" name="claname" type='text' bindinput="claname" placeholder="请输入班级名称" auto-focus/>
+  <view class="floot" />
+</modal>
+
+<modal hidden="{{quitCoursemodal}}" title="退出后您的一切记录将不再保留，确定要退出班级？" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirmQuit">
+</modal>
+
+<modal hidden="{{uploadFilemodal}}" title="从会话中上传文件" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="doUpload">
+  <view class="layout">
+    <view>
+      <text>文件：{{localFileName}}</text>
+    </view>
+    <button bindtap="chooseFile" class="up">选择文件</button>
+  </view>
+  <text class="tt">文件命名：</text>
+  <input class="in" name="fileName" value="{{localFileName1}}" type='text' bindinput="getfilename" focus/>
+  <view class="floot" />
+</modal>
+
+<modal hidden="{{uploadPhotomodal}}" title="上传图片" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="doUpload">
+  <view class="layout">
+    <view>
+      <text>文件：{{localFileName}}</text>
+    </view>
+    <button bindtap="choosePhoto" class="up">选择图片</button>
+  </view>
+  <text class="tt">图片命名：</text>
+  <input class="in" name="fileName" type='text' bindinput="getfilename" placeholder="请输入图片名称" focus/>
+  <view class="floot" />
+</modal>
+
+<modal hidden="{{uploadVideomodal}}" title="上传视频" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="doUpload">
+  <view class="layout">
+    <view>
+      <text>文件：{{localFileName}}</text>
+    </view>
+    <button bindtap="chooseVideo" class="up">选择视频</button>
+  </view>
+  <text class="tt">视频命名：</text>
+  <input class="in" name="fileName" type='text' bindinput="getfilename" placeholder="请输入视频名称" focus/>
+  <view class="floot" />
+</modal>
+
+<modal hidden="{{checkJoinmodal}}" title="审核申请" confirm-text="关闭" bindconfirm="cancel" no-cancel>
+  <view class="checkJoin">学号</view>
+  <view class="checkJoin1">姓名</view>
+  <scroll-view scroll-y="true">
+
+    <view wx:for="{{allSelect}}" wx:key="id">
+      <view class="checkJoin">{{item.studentn}}</view>
+      <view class="checkJoin1">{{item.studentname}}</view>
+      <view class="checkJoin2">
+        <view class="check" bindtap="allow" data-flag="1" data-id="{{item._id}}" data-classname="{{item.classname}}">同意</view>
+      </view>
+      <view class="checkJoin2">
+        <view class="check" bindtap="allow" data-flag="0" data-id="{{item._id}}" data-classname="{{item.classname}}">拒绝</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="floot" />
+</modal>

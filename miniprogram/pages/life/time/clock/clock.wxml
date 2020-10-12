@@ -1,0 +1,22 @@
+<!--miniprogram/pages/life/time/clock/clock.wxml-->
+<!--pages/live/time/clock/clock.wxml-->
+<modal id="modal" bind:confirm="confirm"></modal>
+<ask id="ask" bind:exit="exit"></ask>
+<view class='weather-wrapper'>
+<view class="button1" bindtap="todo">
+ <image class='todo' src='cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/todo1.png'></image>
+</view>
+  <image class='weather-bg'  src='cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/bg1.PNG'></image>
+  <view class="body">
+  <view class="clock">{{count}}</view>
+   <view class='start' bindtap="startcount" wx:if="{{start == 1}}">
+   开始
+   </view>
+   <view class='pause' bindtap="pausecount" wx:if="{{start == 0}}">
+   暂停
+   </view>
+   <view class='giveup' bindtap="giveup">
+   放弃
+   </view>
+   </view>
+</view>

@@ -1,0 +1,11 @@
+<!--components/goods/goods.wxml-->
+<view class="goods">
+<image src="https://i02piccdn.sogoucdn.com/79f70235e3c004f4"/>
+<text>少女时代</text>
+<text>林允儿</text>
+</view>
+<form bindsubmit="_handlerSubmit">
+<input placeholder="账号:" name="account"></input>
+<input placeholder="密码:" name="pwd"></input>
+<button form-type="submit">注册</button>
+</form>

@@ -1,0 +1,209 @@
+/* miniprogram/pages/learn/homework/homework.wxss */
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+.topTabSwiper {
+  zoom: 1;
+  justify-content:space-around;
+  display: flex;
+}
+
+
+
+.tabBorer {
+  border-bottom: 1px solid #6cf;
+  color:  #6cf;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  padding: 80rpx 0;
+}
+ 
+.image1{
+  float:left;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-left: auto 0;
+    }
+
+.pic1{
+  width:100%;
+  position: fixed;
+  display: flex;
+  bottom:0;
+  padding:10rpx;
+  margin-left:-4rpx;
+  background:#F7F7FA;
+  font-size:24rpx;
+  color:#8A8A8A;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #aaa; 
+  z-index: 9999;
+  justify-content: center;
+
+  }
+ 
+ .book-content {
+  margin-top: 15rpx;
+  border: 2px solid #DCDCDC;
+  border-radius: 10px;
+  height: 270rpx;
+  width: 680rpx;
+  margin:10px 12px;
+  
+}
+.book-image {
+  flex: 0 0 32%;
+  box-sizing: border-box;
+  min-height: 242rpx;
+}
+
+.book-image image {
+  height: 182rpx;
+  width: 182rpx;
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.book-info {
+  /* background-color: #fff; */
+  flex: 0 0 66%;
+  box-sizing: border-box;
+  height: 226rpx;
+  margin-top: 38rpx;
+  margin-left: 38rpx;
+}
+
+
+.book-info view {
+  padding-bottom: 10px;
+  display: block;
+  font-size: 30rpx;
+  width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  opacity: 0.9;
+  top: 35%;
+  left: 0;
+  z-index: 9998;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+.see{
+  z-index: 9999;
+}
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+.modal-input {
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+.modal-input1 {
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 40rpx;
+}
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+.input1 {
+  width: 100%;
+  font-size: 40rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+.btn-confirm {
+  width: 50%;
+  color: #66ccff;
+  text-align: center;
+}
+.btn-del {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+#theme{
+  margin-top: 15px;
+}
+.tip{
+  color: #66ccff;
+  text-align: center;
+  margin-top: 15rpx;
+  border: 2px solid #DCDCDC;
+  border-radius: 10px;
+  height: 270rpx;
+  width: 680rpx;
+  margin:10px 12px;
+  line-height: 270rpx;
+}

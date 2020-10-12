@@ -1,0 +1,75 @@
+/* pages/study/study.wxss */
+
+/* page{
+  background-color: #fff;
+} */
+
+.text {
+  font-size: 80rpx;
+}
+
+.text1 {
+  font-size: 40rpx;
+  color: darkgray;
+}
+
+.left {
+  text-align: left;
+  padding-left: 30rpx;
+}
+
+image {
+  width: 700rpx;
+  height: 350rpx;
+  padding-top: 20px;
+  border-radius: 20%;
+  border-top-left-radius: 37%;
+  border-top-right-radius: 37%;
+}
+
+.pic {
+  display: flex;
+  justify-content: center;
+}
+
+.left1 {
+  text-align: left;
+  padding-left: 30rpx;
+  padding-top: 5px;
+}
+
+.text2 {
+  font-size: 35rpx;
+  color: black;
+  font-family: FangSong;
+}
+
+.text3 {
+  font-size: 35rpx;
+  color: black;
+  font-family: FangSong;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.image1, .image2, .image3 {
+  height: 80px;
+  width: 80px;
+}
+
+.button1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-right: 10rpx;
+}
+
+.text4, .text5, .text6 {
+  font-size: 30rpx;
+  color: darkgray;
+  padding-right: 10rpx;
+}

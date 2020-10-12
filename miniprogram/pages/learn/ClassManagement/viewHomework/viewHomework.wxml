@@ -1,0 +1,69 @@
+<!-- 如果身份为学生 -->
+<view wx:if="{{openid != tid}}">
+  <scroll-view scroll-y="true">
+    <view class="content">
+      <view class="title">
+        <text>{{homework.title}}</text>
+      </view>
+      <view class="date">
+        截止时间：
+        <text>{{homework.date}}  {{homework.time}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="content">{{homework.content}}</view>
+    </view>
+
+    <view class="answer" wx:if="{{isComplete == 0}}">
+      <view wx:if="{{isChoose == true}}" class="choose">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/文档.png"></image>
+        <view class="text">{{src['name']}}</view>
+      </view>
+      <view class="upload">
+        <view class="add" bindtap="chooseFile"></view>选择文件
+      </view>
+    </view>
+
+    <view class="answer" wx:else>
+      <view class="choose">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/文档.png" bindtap="previewFile" data-fileName="{{homeworkDetail.homeworkName}}" data-fileID="{{homeworkDetail.homeworkFileID}}" data-path="{{homeworkDetail.homeworkPath}}"></image>
+        <view class="text">{{homeworkDetail.homeworkName}}</view>
+      </view>
+    </view>
+    <view class="button" wx:if="{{isComplete == 0}}">
+      <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework.png" mode="aspectFit" class="image1" bindtap="submitHomework"></image>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 身份为教师 -->
+<view wx:if="{{openid == tid}}">
+  <scroll-view scroll-y="true">
+    <view class="content">
+      <view class="title">
+        <text>{{homework.title}}</text>
+      </view>
+      <view class="date">
+        上交时间：
+        <text>{{homeworkDetail.date}} {{homeworkDetail.time}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="content">{{homework.content}}</view>
+    </view>
+
+    <view class="answer">
+      <view class="choose">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/文档.png" bindtap="previewFile" data-fileName="{{homeworkDetail.homeworkName}}" data-fileID="{{homeworkDetail.homeworkFileID}}" data-path="{{homeworkDetail.homeworkPath}}"></image>
+        <view class="text">{{homeworkDetail.homeworkName}}</view>
+      </view>
+    </view>
+    <view class="blank"></view>
+    <view class="button" wx:if="{{isComplete == 1}}">
+      <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/checkCourse/批阅.png" mode="aspectFit" class="image1" bindtap="correct"></image>
+    </view>
+  </scroll-view>
+</view>
+
+<modal hidden="{{correctmodal}}" title="批改" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirmScore">
+  <input name="claname" type='text' bindinput="getScore" placeholder="请输入分数" auto-focus/>
+  <view class="floot" />
+</modal>

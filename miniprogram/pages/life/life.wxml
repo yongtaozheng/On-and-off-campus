@@ -1,0 +1,47 @@
+<!--miniprogram/pages/life/life.wxml-->
+<!-- <button class="btn" bindtap="toininerary">行程管理</button>
+<button class="btn" bindtap="tomeeting">会议管理</button> -->
+<view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view class="left">
+<text class="text">生活</text>
+</view>
+<view class="left">
+<text class="text1">保持热爱，奔赴山河</text>
+</view>
+<view class="pic">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/live2.png" class='image' >
+</image>
+</view>
+<view class="left1">
+<text class="text2">Choice</text>
+</view>
+<view class="left">
+<text class="text3">功能选择</text>
+</view>
+<view class="button">
+<view class="pic1">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/会议记录.png" class='image1' bindtap="tomeeting">
+</image>
+</view>
+<view class="pic2" >
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/行程管理.png" class='image2' bindtap="toininerary">
+</image>
+</view>
+
+<view class="pic3">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/番茄.png" class='image3' bindtap="tomap"></image>
+</view>
+</view>
+
+<view class="button1">
+<view>
+<text class="text4">会议记录</text>
+</view>
+<view>
+<text class="text5">行程管理</text>
+</view>
+<view>
+<text class="text6">番茄时钟</text>
+</view>
+</view>
+</view>

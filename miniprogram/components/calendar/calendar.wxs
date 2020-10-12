@@ -1,0 +1,13 @@
+
+
+// 支持es4语法
+var filter = {
+  
+  defineIndexOf: function (str, val) {
+    return str.indexOf(val)
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  indexOf: filter.defineIndexOf
+}

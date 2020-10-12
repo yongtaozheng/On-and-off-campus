@@ -1,0 +1,33 @@
+
+<scroll-view scroll-y="{{isScroll}}"> 
+
+  <view class="rootView">
+
+    <view class="inTable">
+
+      <view wx:for="{{arrayData}}" wx:key="" class="unitItemLeft" bindtap="showDialog" data-statu="open">
+        <input class="baseItemWithBorder" value="{{item}}"  disabled />
+      </view>
+
+      <!--测试弹窗-->  
+      <view class="dialogMarsk" bindtap="showDialog" data-statu="close" wx:if="{{isDialogShow}}"></view>  
+        <!--dialog-->
+      <view class="dialog" wx:if="{{isDialogShow}}">
+
+        <view class="appreciationTitle">
+          <text style="font-size:24px;">我是弹窗</text>
+        </view>
+
+        <view wx:for="{{dialogData}}" class="appreciationTable">
+          <view class="unitItemLeft">
+            <text class="baseItemWithBorder">{{item.name}}</text>
+          </view>
+        </view>
+
+      </view> 
+
+    </view>
+
+  </view>
+
+</scroll-view> 

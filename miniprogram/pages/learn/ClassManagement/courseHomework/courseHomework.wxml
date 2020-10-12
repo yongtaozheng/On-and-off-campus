@@ -1,0 +1,40 @@
+<view class="content">
+  <text class="text">标题：</text>
+  <input placeholder="请输入作业标题" bindinput="getTitle"></input>
+</view>
+<view class="content">
+  <text class="text">要求：</text>
+  <textarea maxlength="-1" placeholder="请输入作业要求" bindinput="getContent">
+    <scroll-view scroll-y="true">
+    </scroll-view>
+  </textarea>
+</view>
+<view class="content">
+  <text>上交日期：</text>
+  <picker mode="date" value="{{nowdate}}" start="{{nowdate}}" end="2100-01-01" bindchange="changeDate">
+    <view>
+      {{nowdate}}
+    </view>
+  </picker>
+</view>
+<view class="content">
+  <text>具体时间：</text>
+  <view wx:if="{{nowdate == date}}">
+    <picker mode="time" start="{{nowtime}}" bindchange="changeTime">
+      <view>
+        {{nowtime}}
+      </view>
+    </picker>
+  </view>
+  <view wx:if="{{nowdate != date}}">
+    <picker mode="time" bindchange="changeTime">
+      <view>
+        {{nowtime}}
+      </view>
+    </picker>
+  </view>
+</view>
+
+<view class="button">
+  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/createHomework1.png" mode="aspectFit" class="image1" bindtap="assignHomework"></image>
+</view>

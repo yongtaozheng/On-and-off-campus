@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "x-goods":"/components/goods/goods",
+    "x-loopimg":"/components/loopimg/loopimg"
+  }
+}

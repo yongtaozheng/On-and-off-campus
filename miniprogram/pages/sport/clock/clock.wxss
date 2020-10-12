@@ -1,0 +1,318 @@
+.modal-input {
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.tabBar-icon {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.tabBar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 30rpx;
+  margin-left: -4rpx;
+  font-size: 30rpx;
+  color: #8a8a8a;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #aaa;
+  z-index: 9999;
+}
+
+.foot {
+  font-size: 55rpx;
+  height: 100%;
+  background-color: RGB(59, 73, 110);
+  width: 100%;
+  align-items: left;
+  justify-content: left;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.activity {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.foot-item {
+  font-size: 30rpx;
+  color: RGB(84, 194, 192);
+}
+
+.activity-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-img {
+  height: 100rpx;
+  width: 100rpx;
+  margin-left: 40rpx;
+}
+
+.activity-divLine {
+  background: #fff;
+  width: 100%;
+  height: 2rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+
+.activity-text {
+  margin-left: 100rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.foot-bg {
+  font-size: 55rpx;
+  background-color: RGB(59, 73, 110);
+  width: 100%;
+  height: 1000rpx;
+  align-items: left;
+  justify-content: left;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.tabBar-item {
+  float: left;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.divLine {
+  position: absolute;
+  top: 40rpx;
+  background: rgba(255, 255,255, 0.8);
+  width: 100%;
+  height: 2rpx;
+}
+
+.img-sandian {
+  position: absolute;
+  height: 20rpx;
+  width: 80rpx;
+  top: 30rpx;
+  right: 60rpx;
+}
+
+.tdivLine {
+  position: absolute;
+  top: 377rpx;
+  background: #fff;
+  width: 35%;
+  height: 2rpx;
+}
+
+.mo {
+  font-size: 55rpx;
+  height: 170rpx;
+  background-color: RGB(46, 62, 91);
+  width: 100%;
+  align-items: left;
+  justify-content: left;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.ym {
+  margin-left: 20rpx;
+  margin-top: 3rpx;
+  margin-bottom: 3rpx;
+}
+
+.all {
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.to {
+  font-size: 35rpx;
+  height: 70rpx;
+  background-color: RGB(46, 62, 91);
+  width: 100%;
+  align-items: left;
+  justify-content: left;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.scroll-view {
+  height: 140rpx;
+  background-color: RGB(46, 62, 91);
+  width: 100%;
+  white-space: nowrap;
+}
+
+.item {
+  height: 100rpx;
+  display: inline-block;
+}
+
+.text-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.month {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.week {
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.day {
+  font-size: 32rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+
+/* 日期选中的样式 */
+
+.day-active {
+  background-color: rgb(228, 118, 153);
+  color: #fff;
+}
+
+.recommend {
+  text-align: center;
+  height: 50rpx;
+  margin-top: 10rpx;
+}
+
+.recommend-title {
+  display: table;
+  width: 100%;
+  line-height: 50rpx;
+  white-space: nowrap;
+  border-spacing: 2rem 0;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 35%;
+  left: 0;
+  z-index: 9998;
+  opacity: 0.9;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  margin-top: 0px;
+  border-radius: 36rpx;
+}
+
+.see {
+  z-index: 9999;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 50rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #6cf;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-del {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+#theme {
+  margin-top: 15px;
+}

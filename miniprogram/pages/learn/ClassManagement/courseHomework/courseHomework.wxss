@@ -1,0 +1,40 @@
+.content{
+  margin-top: 15px;
+  display: flex;
+}
+.content textarea{
+  border: 0;
+  border-radius: 15px;
+  background-color: rgba(241, 241, 241, 0.98);
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+  resize: none;
+}
+
+.content .text{
+  margin-top: 10px;
+  width: 48px;
+}
+
+.content input{
+  border-radius: 5px ;
+  background-color: rgba(241, 241, 241, 0.98);
+  width: 80%;
+  padding: 10px;
+  resize: none;
+}
+
+.image1 {
+  width: 300rpx;
+  height: 300rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+
+}
+
+.button {
+  justify-content: center;
+  display: flex;
+}

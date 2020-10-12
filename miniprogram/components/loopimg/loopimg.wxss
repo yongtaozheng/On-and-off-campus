@@ -1,0 +1,3 @@
+/* components/loopimg/loopimg.wxss */
+.swiper{width: 100%;height: 200px}
+.slide-image{width: 100%;height: 100%}

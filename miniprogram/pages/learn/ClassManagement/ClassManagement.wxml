@@ -1,0 +1,36 @@
+<!--miniprogram/pages/learn/ClassManagement/ClassManagement.wxml-->
+
+<view class="left">
+  <text class="text">学习</text>
+</view>
+<view class="left">
+  <text class="text1">学海无涯，心存高远</text>
+</view>
+<view class="pic">
+  <image bindtap="tocheakCourse" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/查看课程.png" class='image'>
+  </image>
+</view>
+
+<view class="pic">
+  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/创建课程.png" class='image' type="primary" bindtap="modalinput">
+  </image>
+</view>
+<modal id="modal" hidden="{{hiddenmodalput}}" title="课程信息" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class="layout">
+    <view>
+      <input type='text' value="{{p}}" placeholder="课程封面" auto-focus/>
+    </view>
+    <view class="up" bindtap="doUpload">上传</view>
+  </view>
+  <input type='text' bindinput="courseName" value="{{courseName}}" placeholder="课程名" auto-focus/>
+  <input type='text' bindinput="createrName" value="{{createrName}}" placeholder="授课老师" auto-focus/>
+  <textarea class="abstract" maxlength="-1" placeholder="请输入课程简介" bindinput="getAbstract">
+    <scroll-view scroll-y="true">
+    </scroll-view>
+  </textarea>
+</modal>
+
+<view class="pic">
+  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/我的课程.png" bindtap="mycourse" class='image'>
+  </image>
+</view>

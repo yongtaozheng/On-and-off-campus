@@ -1,0 +1,47 @@
+<view class='topTabSwiper'>
+  <view class='tab {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>已提交</view>
+  <view class='tab {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>缺交</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper' style="height:90vh;" duration="300" bindchange="bindchange">
+
+  <swiper-item>
+    <scroll-view scroll-y="true">
+      <view class="book-content">
+        <view class="detail">学号</view>
+        <view class="detail">姓名</view>
+        <view class="detail">提交时间</view>
+        <view class="detail">分数</view>
+        <view wx:for="{{allSubmit}}" wx:key="id" wx:for-item="item">
+          <view class="book-list" wx:if="{{item.state != 0}}" data-submitid="{{item._id}}" data-isComplete="{{item.state}}" bindtap="viewHomework">
+            <view class="detail">{{item.studentn}}</view>
+            <view class="detail">{{item.studentname}}</view>
+            <view class="detail">{{item.date}}</view>
+            <view class="detail" wx:if="{{item.state == 1}}">批改</view>
+            <view class="detail" wx:if="{{item.state == 2}}">{{item.score}}</view>
+            
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+
+    <scroll-view scroll-y="true">
+      <view class="book-content">
+        <view class="detail1">学号</view>
+        <view class="detail1">姓名</view>
+        <view wx:for="{{allUnfinished}}" wx:key="id" wx:for-item="item">
+          <view class="book-list">
+            <view class="detail1">{{item.studentn}}</view>
+            <view class="detail1">{{item.studentname}}</view>
+          </view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

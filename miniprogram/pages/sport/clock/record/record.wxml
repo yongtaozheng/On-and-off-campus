@@ -1,0 +1,20 @@
+<view class="body">
+<view class="title">日记录DAY</view>
+  <view class="charts"> 
+  <view class="y"></view>
+      <canvas canvas-id="columnCanvas" class="canvas" disable-scroll='true' style='width:{{code_w}}px;height:{{code_h}}px'></canvas>
+      <view style='width:680rpx;height:auto;' class="title_canvas">  
+      </view>
+  <view class="x"></view>
+  </view>
+
+  
+<view class="title">周记录WEEK</view>
+  <view class="charts"> 
+  <view class="y"></view>
+      <canvas canvas-id="columnCanvas1" class="canvas" disable-scroll='true' style='width:{{code_w}}px;height:{{code_h}}px'></canvas>
+      <view style='width:680rpx;height:auto;' class="title_canvas">  
+      </view>
+  <view class="x"></view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<view>
+  <image class="topImage" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/封面.png"></image>
+</view>
+<view class="plan">
+  <view class="text">Learning plan\n学习计划</view>
+  <image class="change" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/修改.png" bindtap="changePlan"></image>
+</view>
+<view class="myplan">
+  <view class="left">{{bookname}}
+    <view class="center">{{plan}}/day</view>
+  </view>
+  <view class="right">{{n}}/{{totalNum}}</view>
+</view>
+<view class="button">
+  <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/开始学习.png" mode="aspectFit" class="image" bindtap="toStudy"></image>
+</view>
+
+<modal hidden="{{planChangemodal}}" title="修改学习计划" confirm-text="修改" cancel-text="取消" bindcancel="cancel" bindconfirm="confirmChange">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="id">
+      <view class="radio-list">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        <view class="right">{{item.number}}词</view>
+      </view>
+    </label>
+  </radio-group>
+  <view class="tui-content">
+    <view class="tui-gallery-list"><view class="text">每日新单词数：</view>
+      <view class="tui-number-group">
+        <button class="tui-number-cell" bindtap="nextNum1" disabled='{{disabled1}}'><text style="font-size:25rpx;">-10</text></button>
+        <input class="tui-number-cell" type="number" value='{{number1}}' bindinput="changeNumber" bindblur="limit"></input>
+        <button class="tui-number-cell" bindtap="prevNum1" disabled='{{disabled2}}'><text style="font-size:25rpx;">+10</text></button>
+      </view>
+    </view>
+  </view>
+  <view class="floot" />
+</modal>

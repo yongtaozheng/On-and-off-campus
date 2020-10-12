@@ -1,0 +1,3 @@
+<view><text>正在预览视频{{name}}</text>
+    <video src="{{src}}" class="video" title="{{name}}" show-mute-btn></video>
+</view>

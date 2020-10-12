@@ -1,0 +1,166 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"compileHotReLoad": false
+	},
+	"appid": "wxdbbd0bcf6e854a80",
+	"projectname": "%E6%A0%A1%E9%87%8C%E6%A0%A1%E5%A4%960523",
+	"libVersion": "2.10.4",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"permissions": {
+			"openapi": [
+				"subscribeMessage.send"
+			]
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/learn/homework/homework",
+					"pathName": "pages/learn/homework/homework",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "班级管理",
+					"pathName": "pages/learn/ClassManagement/ClassManagement",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "生活",
+					"pathName": "pages/life/life",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/life/itinerary/itinerary",
+					"pathName": "pages/life/itinerary/itinerary",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/life/meeting/meeting",
+					"pathName": "pages/life/meeting/meeting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学习首页",
+					"pathName": "pages/learn/learn/learn",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "全部课程",
+					"pathName": "pages/learn/ClassManagement/cheakCourse/cheakCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的课程",
+					"pathName": "pages/learn/ClassManagement/myCourse/myCourse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会议管理",
+					"pathName": "pages/life/meeting/meeting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/life/map/map",
+					"pathName": "pages/life/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/index/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/life/time/time",
+					"pathName": "pages/life/time/time",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/life/time/record/record",
+					"pathName": "pages/life/time/record/record",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/life/time/time",
+					"pathName": "pages/life/time/time",
+					"scene": null
+				}
+			]
+		}
+	}
+}

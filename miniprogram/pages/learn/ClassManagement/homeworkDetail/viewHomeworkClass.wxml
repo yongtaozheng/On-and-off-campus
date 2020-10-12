@@ -1,0 +1,18 @@
+<scroll-view scroll-y="true" class="scroll-list">
+  <view class="book-content">
+    <view wx:for="{{classList}}" wx:key="id" wx:for-item="item">
+      <view class="book-list" wx:if="{{item.number !=0}}" bindtap="viewCourseHomework" data-classname="{{item.classname}}">
+        <view class="book-image">
+          <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework1.png" mode="aspectFit"></image>
+        </view>
+        <view class="book-info">
+          <view class="book-info-style">
+            <view>{{item.classname}}</view>
+            <view>完成状态：{{item.submitNum}}/{{item.number}}</view>
+          </view>
+        </view>
+        <view class="line"></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

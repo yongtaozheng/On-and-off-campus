@@ -1,0 +1,24 @@
+<!--components/modal/modal.wxml-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">新建待办</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputTheme" class="input" placeholder="待办事情"></input>
+    </view>
+    <view class="modal-input">
+      <picker class="input-holder" mode="date" value="{{nowdate}}" start="{{nowdate}}" end="2100-01-01" bindchange="changeDate">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowdate}}" type="text" maxlength="20" class="input" placeholder="日期"></input>
+    </picker>
+    </view>
+    <view class="modal-input">
+    <picker class="in" mode="time" start="" bindchange="changeTime">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowtime}}" type="text" maxlength="20"  class="input" placeholder="具体时间"></input>
+    </picker>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,152 @@
+<!--miniprogram/pages/life/meeting.wxml-->
+<Calendar id="Calendar" bind:select="select"></Calendar>
+<view type='default' bindtap='toggleType' wx:if="{{!showmeeting}}">
+      <image class="add_icon" src="../../../icon/switch1.png"></image>
+</view>
+<view type='default' bindtap='toggleType' wx:if="{{showmeeting}}">
+      <image class="add_icon" src="../../../icon/switch.png"></image>
+</view>
+
+<view wx:if="{{showmeeting}}">
+<block wx:for="{{mymeeting}}" wx:key="index" wx:if="{{selectVal==item.meetingDate}}" >
+  <view class="meeting_display" data-index="{{index}}" data-Theme="{{item.meetingTheme}}" data-Date="{{item.meetingDate}}" data-Time="{{item.meetingTime}}" data-People="{{item.meetingPeople}}" data-Remark="{{item.meetingRemark}}" data-Place="{{item.meetingPlace}}" data-id="{{item._id}}" bindlongpress="notes" bindtap="showModal">
+        <view id="theme" data-index="{{index}}" data-Theme="{{item.meetingTheme}}" data-Date="{{item.meetingDate}}" data-Time="{{item.meetingTime}}" data-People="{{item.meetingPeople}}" data-Remark="{{item.meetingRemark}}" data-Place="{{item.meetingPlace}}" data-id="{{item._id}}" bindlongpress="notes" bindtap="showModal">
+          {{item.meetingTheme}}
+        </view>
+        <view data-Theme="{{item.meetingTheme}}" data-index="{{index}}" data-Date="{{item.meetingDate}}" data-Time="{{item.meetingTime}}" data-People="{{item.meetingPeople}}" data-Remark="{{item.meetingRemark}}" data-Place="{{item.meetingPlace}}" data-id="{{item._id}}" bindlongpress="notes" bindtap="showModal">
+          {{item.meetingDate + ' ' + item.meetingTime}}
+        </view>
+        <view data-Theme="{{item.meetingTheme}}" data-index="{{index}}" data-Date="{{item.meetingDate}}" data-Time="{{item.meetingTime}}" data-People="{{item.meetingPeople}}" data-Remark="{{item.meetingRemark}}" data-Place="{{item.meetingPlace}}" data-id="{{item._id}}" bindlongpress="notes" bindtap="showModal">
+          {{item.meetingPlace}}
+        </view>
+        <view data-Theme="{{item.meetingTheme}}" data-index="{{index}}" data-Date="{{item.meetingDate}}" data-Time="{{item.meetingTime}}" data-People="{{item.meetingPeople}}" data-Remark="{{item.meetingRemark}}" data-Place="{{item.meetingPlace}}" data-id="{{item._id}}" bindlongpress="notes" bindtap="showModal" class="tip">
+          (长按查看会议笔记)
+        </view>
+  </view>
+</block>
+</view>
+
+<view class="tabBar" wx:if="{{hiddenmodalput3}}">
+    <view class="tabBar-item">
+      <view bindtap="createMeeting"><image class="tabBar-icon" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework/添加.png"></image></view>
+      <view class="" bindtap="createMeeting">新建</view>
+      <!-- <view type='default' bindtap='toggleType'>切换展示效果</view> -->
+    </view>
+ </view>
+
+<!-- <view class="changview" style='width:90%;margin:0 auto;text-align:center;padding:30rpx 20rpx;border:1rpx dashed #aaa;'>
+    <button type='default' bindtap='toggleType'>切换展示效果</button>
+    <text>meeting.wxml</text>
+    <view>Selected:{{selectVal}} 周{{nowweek}}</view>
+</view> -->
+
+<view class="zhanwei"  wx:if="{{hiddenmodalput3}}"></view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">新建会议</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputTheme" class="input" placeholder="会议主题"></input>
+    </view>
+    <view class="modal-input">
+      <picker class="input-holder" mode="date" value="{{nowdate}}" start="{{nowdate}}" end="2100-01-01" bindchange="changeDate">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowdate}}" type="text" maxlength="20" class="input" placeholder="会议日期"></input>
+    </picker>
+    </view>
+    <view class="modal-input">
+    <picker class="in" mode="time" start="" bindchange="changeTime">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowtime}}" type="text" maxlength="20"  class="input" placeholder="会议时间"></input>
+    </picker>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputPlace" class="input" placeholder="会议地点"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputPeople" class="input" placeholder="会议人员"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="40" bindinput="inputRemark" class="input" placeholder="备注"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+</view>
+
+<view class="see">
+  <modal hidden="{{hiddenmodalput1}}" title="确定删除" confirm-text="确定" cancel-text="取消" bindcancel="delcancel" bindconfirm="delconfirm">
+  </modal>
+</view>
+
+<view class="modal-mask" bindtap="showModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput2}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput2}}">
+  <view class="modal-title">{{showTheme}}</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="主题：{{showTheme}}" ></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="日期：{{showDate}}" ></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="时间：{{showTime}}" ></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="地点：{{showPlace}}" ></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="人员：{{showPeople}}" ></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" class="input" value="备注：{{showRemark}}" ></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="confirm1" data-status="cancel">关闭</view>
+    <view class="btn-confirm" data-id="{{showId}}" bindtap="delBtn" data-status="confirm">删除</view>
+  </view>
+</view>
+
+<view class="modal-dialog1" wx:if="{{!hiddenmodalput3}}">
+<view class="notetitle">
+  <text>{{showTheme}}</text>
+</view>
+
+<!-- <textarea disabled="{{!writing}}" class="notes" maxlength="-1" bindinput="inputNote"> 
+{{note}}
+</textarea> -->
+
+<view class='row' id="textareawrap">
+  <textarea wx:if="{{!show}}" class='text' bindinput="inputNote" maxlength="5000"  
+  focus='{{focus}}' auto-focus="true" name="content" value="{{note}}" bindblur="showTextarea">
+  </textarea> 
+  <view class="text1" wx:if="{{show}}" bindtap="showTextarea">
+  {{note}}
+  </view>
+</view>
+<view class="notepics">
+  <view  wx:for="{{img}}">
+    <image data-index="{{index}}" bindlongtap="clear" bindtouchstart='bindTouchStart' bindtouchend='bindTouchEnd' bindtap="clickImg" mode="center" class="notepic" src = "{{item}}">
+    </image>
+  </view>
+<view style="height:100px;width:100%"></view>
+</view>
+
+
+<view class="tabBar" wx:if="{{!writing}}">
+<image bindtap="write" wx:if="{{!writing}}" class="modify" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/xiugai.png"></image>
+<view class="box" wx:if="{{!writing}}">
+  <image bindtap="saveNote" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/保存.png"></image>
+  <image bindtap="cancelNote" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/取消.png"></image>
+</view>
+ </view>
+</view>
+
+<view class="tabBar" wx:if="{{writing}}">
+<image wx:if="{{writing}}" class="camera" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/相机.png" bindtap="uploadPic"></image>
+    <view class="comnote">
+      <image class="comnote" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/完成.png" bindtap="compNote"></image>
+    </view>
+ </view>

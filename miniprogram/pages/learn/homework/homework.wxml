@@ -1,0 +1,98 @@
+<!--pages/learn/homework/homework.wxml-->
+<addhomework id="addhomework" bind:confirm="confirm"></addhomework>
+<view class='topTabSwiper'>
+  <view class='tab {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>未完成</view>
+  <view class='tab {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>已完成</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper' style="height:{{480+(sheight==0?sheight-2:sheight-2.7)*150}}px;" duration="300" bindchange="bindchange">
+<swiper-item>
+<view class="tip" wx:if="{{sheight==0}}">作业都已经完成了哦</view>
+    <block wx:for="{{homework}}" wx:key="id" wx:if="{{item.state==0}}">
+      <view class="book-content">
+          <view class="book-info"  bindtouchstart='bindTouchStart' bindtouchend='bindTouchEnd' 
+                bindtap="{{item.flag?'cancelBtn':'sqBtn'}}" data-project="{{item.project}}" data-date="{{item.handdate}}"                   data-detail="{{item.detail}}" data-id="{{item._id}}" data-state="{{item.state}}">
+              <view>科目：{{item.project}}（点击可查看作业详情）</view>
+              <view>上交日期：{{item.handdate}}</view>
+              <view>作业描述：{{item.detail}}</view>
+              <view class="{{item.flag?'green':'red'}}">推送提醒：{{item.flag?"已授权":"未授权"}}(长按可更改授权状态哦)</view>
+          </view>
+        </view>
+    </block>
+    
+  </swiper-item>
+
+
+  <swiper-item>
+    
+    <block wx:for="{{homework}}" wx:key="id" wx:if="{{item.state==1}}">
+      <view class="book-content">
+          <view class="book-info" bindtap="check" data-project="{{item.project}}" data-date="{{item.handdate}}"
+            data-detail="{{item.detail}}" data-id="{{item._id}}" data-state="{{item.state}}">
+              <view>科目：{{item.project}}</view>
+              <view>上交日期：{{item.handdate}}</view>
+              <view>作业描述：{{item.detail}}</view>
+          </view>
+        </view>
+    </block>
+  </swiper-item>
+</swiper>
+
+
+<view class="pic1">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/homework/添加.png" class='image1' type="primary" bindtap="add">
+</image>
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">新添作业</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputproject" class="input" placeholder="科目"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="200" bindinput="inputdetail" class="input1" placeholder="作业描述"></input>
+    </view>
+    <view class="modal-input">
+      <picker class="input-holder" mode="date" value="{{nowdate}}" start="{{nowdate}}" end="2100-01-01" bindchange="changeDate">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowdate}}" type="text" maxlength="20" class="input" placeholder="日期"></input>
+    </picker>
+    </view>
+    <view class="modal-input">
+    <picker class="in" mode="time" start="" bindchange="changeTime">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowtime}}" type="text" maxlength="20"  class="input" placeholder="具体时间"></input>
+    </picker>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal1" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput1}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput1}}">
+  <view class="modal-title">查看作业</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" value="科目：{{iproject}}" maxlength="20" class="input" placeholder="科目"></input>
+    </view>
+    <view class="modal-input1">
+    <textarea disabled="ture" auto-height="true" value="作业描述：{{idetail}}" maxlength="100" class="input" placeholder="内容">
+    </textarea>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" disabled="ture" value="上交时间：{{handdate}}" maxlength="20" class="input" placeholder="时间"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-del" bindtap="del" data-status="confirm">删除</view>
+    <view wx:if="{{state==0}}" class="btn-confirm" bindtap="comp" data-status="confirm">已完成</view>
+  </view>
+</view>
+
+

@@ -1,0 +1,47 @@
+<!--pages/sport/sport/sport.wxml-->
+<view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view class="left">
+<text class="text">运动</text>
+</view>
+<view class="left">
+<text class="text1">热爱生命，热爱运动</text>
+</view>
+<view class="pic">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/sport2.png" class='image' >
+</image>
+</view>
+<view class="left1">
+<text class="text2">Choice</text>
+</view>
+<view class="left">
+<text class="text3">功能选择</text> 
+</view>
+<view class="button">
+<view class="pic1">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/运动打卡.png" class='image1' bindtap="toClock">
+</image>
+</view>
+<view class="pic2" >
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/运动计划.png" class='image2'
+ bindtap="">
+</image>
+</view>
+
+<!-- <view class="pic3">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/sport.png" class='image3'></image>
+</view> -->
+</view>
+
+<view class="button1">
+<view>
+<text class="text4">运动打卡</text>
+</view>
+<view>
+<text class="text5">运动计划</text>
+</view>
+<!-- <view>
+<text class="text6">岭师地图</text>
+</view> -->
+</view>
+</view>
+

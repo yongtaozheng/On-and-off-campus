@@ -1,0 +1,142 @@
+<!--miniprogram/pages/life/time/time.wxml-->
+<!--pages/live/time/time.wxml-->
+
+<view wx:if="{{show}}">
+  <view class="left1">
+    <text class="text2">Choice</text>
+  </view>
+  <view class="left">
+    <text class="text3">选择</text>
+  </view>
+
+  <view class="button">
+    <view class="{{(select=='work')?'selected':' '}}" bindtap="select1">
+      <view class="pic1">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/work.png" class='image1'>
+        </image>
+      </view>
+    </view>
+
+    <view class="pic2">
+      <view class="{{(select=='study')?'selected':' '}}" bindtap="select2">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/study.png" class='image2'>
+        </image>
+      </view>
+    </view>
+
+    <view class="pic3">
+      <view class="{{(select=='rest')?'selected':' '}}" bindtap="select3">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/rest.png" class='image3'>
+        </image>
+      </view>
+    </view>
+  </view>
+
+  <view class="button1">
+    <view>
+      <text class="text4">工作</text>
+    </view>
+
+    <view>
+      <text class="text5">学习</text>
+    </view>
+    <view>
+      <text class="text6">休息</text>
+    </view>
+  </view>
+
+  <view class="button">
+    <view class="pic1">
+      <view class="{{(select=='sport')?'selected':' '}}" bindtap="select4">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/sport.png" class='image1'>
+        </image>
+      </view>
+    </view>
+
+    <view class="pic2">
+      <view class="{{(select=='dull')?'selected':' '}}" bindtap="select5">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/dull.png" class='image2'>
+        </image>
+      </view>
+    </view>
+
+    <view class="pic3">
+      <view class="{{(select=='read')?'selected':' '}}" bindtap="select6">
+        <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/read.png" class='image3'></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="button1">
+    <view>
+      <text class="text4">跑步</text>
+    </view>
+    <view>
+      <text class="text5">发呆</text>
+    </view>
+    <view>
+      <text class="text6">阅读</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!show}}">
+  <view class="view1">
+    <view class="vv">
+      <text class="text">今日番茄数</text>
+      <text class="num1">{{tal}}</text>
+    </view>
+    <view class="line"></view>
+    <!-- <view class="line"></view> -->
+    <view class="vv">
+      <text class="text">累计番茄数</text>
+      <text class="num1">{{all}}</text>
+    </view>
+  </view>
+
+  <view class="pie">今日统计图:</view>
+  <canvas canvas-id="canvas" class="canvas"></canvas>
+  <view class="pie">累计统计图:</view>
+  <canvas canvas-id="canvas1" class="canvas"></canvas>
+</view>
+
+<cover-view class='add_btn'>
+  <cover-view data-ch="1" bindtap="switchview">
+    <cover-image wx:if="{{show}}" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/time1.png" class='image4'></cover-image>
+    <cover-image wx:if="{{!show}}" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/time.png" class='image4'></cover-image>
+  </cover-view>
+  <cover-view data-ch="2" bindtap="switchview">
+    <cover-image wx:if="{{!show}}" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/statistics1.png" class='image4'></cover-image>
+
+    <cover-image wx:if="{{show}}" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/statistics.png" class='image4'></cover-image>
+  </cover-view>
+</cover-view>
+
+<cover-view class="add_btn1">
+  <cover-view data-ch="1" bindtap="switchview" class="{{show?'text8':'text7'}}">
+    计时
+    <!-- <text class="text7">计时</text> -->
+  </cover-view>
+
+  <cover-view data-ch="2" bindtap="switchview" class="{{show?'text7':'text8'}}">
+    统计
+    <!-- <text class="text8" bindtap="switchview">统计</text> -->
+  </cover-view>
+</cover-view>
+
+
+
+<!-- 弹窗 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">开始{{showtitle}}30分钟</view>
+  <view class="modal-content">
+    <!-- <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" disabled="true" value="确定放弃？" maxlength="20" bindinput="inputTheme" class="input" placeholder="待办事情"></input>
+    </view> -->
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+</view>

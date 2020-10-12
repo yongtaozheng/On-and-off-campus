@@ -1,0 +1,12 @@
+/* components/goods/goods.wxss */
+.goods{
+  width: 240rpx;
+  height: 300rpx;
+  border:  2rpx solid red;
+  display: flex;
+  flex-direction: column;
+  margin: 2rpx; 
+}
+.goods image{
+  width: 100%;
+}

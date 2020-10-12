@@ -1,0 +1,77 @@
+ <view class="divLine">
+ </view>
+ <view class="tdivLine">
+ </view>
+ <view>
+  <image class="img-sandian" src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/record.png"
+          bindtap="toRecord"></image>
+ </view>
+ <view class="mo">
+ <view class="ym"> {{yy}}</view>
+ <view class="ym">{{mm}}</view>
+ </view>
+ <scroll-view class="scroll-view" scroll-left="{{scrollLeftIndex*itemWidth}}" scroll-x scroll-with-animation>
+ <view class='item' style='width:{{itemWidth}}px' wx:for="{{dateList}}" wx:key="id" data-index='{{index}}' bindtap='clickDate'>
+ <view class='text-view'>
+ <view wx:if="{{item.month == sysmonth && item.day == nowDate}}">
+<text class='week'>今日</text>
+ </view>
+ <view wx:else>
+ <text class='week'>{{item.week}}</text>
+ </view>
+  <view class='day {{index==clickIndex?"day-active":""}}'>{{item.day}}</view>
+ </view>
+ </view>
+</scroll-view>
+<view class="to">
+<view class="all">
+ <text class="week" decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Habits</text>
+ </view>
+ </view>
+<view class="foot">
+<block >
+<view class="activity" wx:for="{{myclock}}" wx:key="id" data-id="{{item._id}}" data-clockdate="{{item.clockdate}}" 
+      bindtap="{{today==selectDate?'comp':'acomp'}}" data-ind="{{index}}">
+  <image class="activity-img" src="{{flagIndex[index]?'cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/finish.png':'cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/sport/unfinish.png'}}"></image>
+  <view class="activity-item">
+  <view class="activity-text">{{item.title}}</view>
+  <view class="activity-text">{{item.timelong}}min</view>
+  <view class="activity-divLine"></view>
+  </view>
+</view></block>
+<view class="foot-bg">
+</view>
+
+<view class="tabBar">
+    <view class="tabBar-item">
+      <view class="foot-item" bindtap="bindViewTap">+ 新建打卡内容</view>
+    </view>
+ </view>
+ </view>
+
+<view >
+    <modal title="新建打卡记录" hidden="{{modalHidden}}" confirm-text="确定"
+    cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
+      <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputTheme" class="input" placeholder="打卡内容"></input>
+      </view>
+      <view class="modal-input">
+      <picker class="in" mode="time" start="" bindchange="changeTime">
+      <input placeholder-class="input-holder" disabled="ture" value="{{nowtime}}" type="text" maxlength="20"  class="input" placeholder="打卡时长"></input>
+      </picker>
+      </view>
+    </modal>
+</view>
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">请选择</view>
+  <view class="modal-content">
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view wx:if="{{!flagIndex[ind]}}" class="btn-confirm" bindtap="confirm" data-status="confirm">打卡</view>
+    <view class="btn-del" bindtap="del" data-status="confirm">删除</view>
+  </view>
+</view>

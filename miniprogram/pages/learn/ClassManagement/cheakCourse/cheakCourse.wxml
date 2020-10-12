@@ -1,0 +1,32 @@
+<!--miniprogram/pages/learn/ClassManagement/cheakCourse/cheakCourse.wxml-->
+<view>
+  <view>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <!-- 搜索框 -->
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" value="{{searchkey}}" confirm-type="search" name="hwork" type='text' bindinput="nhw" placeholder="请输入搜索课程名字" auto-focus/>
+        </view>
+      </view>
+      <!-- 搜索按钮,调用搜索查询方法 -->
+      <view class="weui-search-bar__cancel-btn" bindtap='search'>搜索</view>
+    </view>
+  </view>
+</view>
+
+<view class="book-content">
+  <view wx:for="{{allClass}}" wx:key="id">
+    <view wx:if="{{index < show}}" class="book-list" bindtap="coursedetail" data-teacher="{{item.teacher}}" data-cname="{{item.coursename}}" data-cid="{{item._id}}" data-img="{{item.img}}" data-tid="{{item.teacherid}}" data-n="{{item.number}}" data-abstract="{{item.abstract}}">
+      <view class="book-image">
+        <image src="{{item.img}}" mode="aspectFit"></image>
+      </view>
+      <view class="book-info">
+          <view>课程：{{item.coursename}}</view>
+          <view>创建人：{{item.teacher}}</view>
+          <view>学生人数：{{item.number}}</view>
+      </view>
+    </view>
+    <view class="line"></view>
+  </view>
+</view>

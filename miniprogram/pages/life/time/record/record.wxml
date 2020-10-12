@@ -1,0 +1,145 @@
+<!--miniprogram/pages/life/time/record/record.wxml-->
+
+<view class="view1">
+<view class="vv">
+<text class="text">今日番茄数</text>
+<text class="num1">{{tal}}</text>
+</view>
+<view class="line"></view>
+<!-- <view class="line"></view> -->
+<view class="vv">
+<text class="text">累计番茄数</text>
+<text class="num1">{{all}}</text>
+</view>
+</view>
+  
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">工作</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{twork}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{twork*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">学习</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{tstudy}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{tstudy*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">休息</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{trest}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{trest*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">跑步</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{tsport}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{tsport*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">发呆</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{tdull}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{tdull*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="view2"></view>
+<view class="view3">
+<view class="text1">
+<text class="text3">阅读</text>
+</view>
+<view class="view33">
+<view class="text2">
+<text class="text">今日番茄数</text>
+<text class="num">{{tread}}</text>
+</view>
+<view class="line1"></view>
+<view class="text2">
+<text class="text">累计时间</text>
+<text class="num">{{tread*30}}min</text>
+</view>
+</view>
+</view>
+
+<view class="zhanwei"></view>
+
+
+  <view class='add_btn'>
+   <view bindtap="totime">
+    <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/time.png" class='image4'></image>
+    </view>
+     <view>
+      <image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/live/time/statistics1.png" class='image4'></image>
+      </view>
+</view>
+
+<view class="add_btn1">
+<view bindtap="totime">
+<text class="text7">计时</text>
+</view>
+
+<view>
+<text class="text8">统计</text>
+</view>
+
+</view>

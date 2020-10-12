@@ -1,0 +1,60 @@
+<!--miniprogram/pages/life/ininerary/ininerary.wxml-->
+<view class="h1">我的行程安排</view>
+<view class='weui-cell-third'>
+  <view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{itineraryDate[index]}}</text>
+        <image wx:if="{{show}}" class="select_icon" mode="aspectFill" src="../../../icon/Triangle1.png"></image>  
+        <image wx:if="{{!show}}"class="select_icon" mode="aspectFill" src="../../../icon/Triangle.png"></image>  
+    </view>
+    <view class='option_box' style='height:{{show?(itineraryDate.length>5?300:itineraryDate.length*60):0}}rpx;'>
+        <text class='option' style='{{index==itineraryDate.length-1&&"border:0;"}}' wx:for='{{itineraryDate}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+</view>
+
+  <block wx:for="{{myItinerary}}" wx:key="index">
+    <view class='weui-cell-list' wx:if="{{itineraryDate[slectind]==item.itineraryDate}}">
+      <view class='weui-cell-circle'></view>
+      <view class='weui-cell-line' wx:if="{{index%2==0}}" bindlongpress="delBtn" data-id="{{item._id}}">
+        <view class='weui-cell-time'>{{item.itineraryTime}}</view>
+        <view class='weui-cell-name'>{{item.itineraryName}}</view>
+        <!-- <view class='weui-cell-del' bindtap="delBtn" data-id="{{item._id}}">删除</view> -->
+      </view>
+      <view class='weui-cell-line1' wx:if="{{index%2==1}}" bindlongpress="delBtn" data-id="{{item._id}}">
+        <view class='weui-cell-time1'>{{item.itineraryTime}}</view>
+        <view class='weui-cell-name1'>{{item.itineraryName}}</view>
+        <!-- <view class='weui-cell-del1' bindtap="delBtn" data-id="{{item._id}}">删除</view> -->
+      </view>
+    </view>
+  </block>
+</view>
+<view class="zhanwei"></view>
+
+
+  <view class="tabBar">
+    <view class="tabBar-item">
+      <view bindtap="createIninerary"><image class="tabBar-icon" src='../../../icon/life/ininerary/new.png'></image></view>
+      <view class="" bindtap="createIninerary">新建</view>
+    </view>
+ </view>
+
+ 
+<modal id="modal" hidden="{{hiddenmodalput}}" title="新建行程" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+<text class="t">行程</text>
+    <input class="in" name="hwork" type='text' value="{{itineraryName}}" bindinput="changItineraryName" placeholder="请输入行程" auto-focus/>
+    <text class="tt">日期</text> 
+    <picker class="in" mode="date" value="{{nowdate}}" start="{{nowdate}}" end="2100-01-01" bindchange="changeDate">
+    <view class="tui-picker-detail">
+       {{nowdate}}
+    </view>
+    </picker>
+    <text class="tt">具体时间</text> 
+    <picker class="in" mode="time" start="" bindchange="changeTime">
+    <view class="">
+       {{nowtime}}
+    </view>
+    </picker>
+</modal>
+
+<modal hidden="{{hiddenmodalput1}}" title="确定删除" confirm-text="确定" cancel-text="取消" bindcancel="delcancel" bindconfirm="delconfirm">
+</modal>

@@ -1,0 +1,14 @@
+<!--components/modal/modal.wxml-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{!hiddenmodalput}}"></view>
+<view class="modal-dialog" wx:if="{{!hiddenmodalput}}">
+  <view class="modal-title">确定要放弃吗?</view>
+  <view class="modal-content">
+    <!-- <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" disabled="true" value="确定放弃？" maxlength="20" bindinput="inputTheme" class="input" placeholder="待办事情"></input>
+    </view> -->
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
+  </view>
+</view>

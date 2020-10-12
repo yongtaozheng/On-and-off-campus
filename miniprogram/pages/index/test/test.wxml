@@ -1,0 +1,14 @@
+<!--miniprogram/pages/index/test/test.wxml-->
+<modal id="modal"></modal>
+<view bindtap="newThing">新建待办</view>
+<view class="button1">
+<view class="{{(select=='work')?'selected':' '}}" bindtap="select1" >
+<text class="text4">工作</text>
+</view>
+<view class="{{(select=='study')?'selected':' '}}" bindtap="select2" >
+<text class="text5">学习</text>
+</view>
+<view class="{{(select=='rest')?'selected':' '}}" bindtap="select3" >
+<text class="text6">休息</text>
+</view>
+</view>

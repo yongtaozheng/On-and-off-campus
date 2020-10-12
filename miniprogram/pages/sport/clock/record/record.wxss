@@ -1,0 +1,25 @@
+/* miniprogram/pages/sport/clock/record/record.wxss */
+.charts{
+  border: 2px solid #2E3E5B;
+  width: 90%;
+  border-radius: 8%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: darkgray 0px 0px 6px 3px;
+}
+.title{
+  margin-top: 20px;
+  margin-left: 15px;
+  color: RGB(46,62,91);
+}
+.y{
+  border-right: 2px solid black;
+  position: relative;
+  left: 20px;
+}
+.x{
+  border-top: 2px solid black;
+  position: relative;
+  bottom: 25px;
+  width: 95%;
+}

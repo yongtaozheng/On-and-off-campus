@@ -1,0 +1,45 @@
+<!--miniprogram/pages/learn/learn/learn.wxml-->
+<view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view class="left">
+<text class="text">学习</text>
+</view>
+<view class="left">
+<text class="text1">学海无涯，心存高远</text>
+</view>
+<view class="pic">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/learn2.png" class='image' >
+</image>
+</view>
+<view class="left1">
+<text class="text2">Choice</text>
+</view>
+<view class="left">
+<text class="text3">功能选择</text>
+</view>
+<view class="button">
+<view class="pic1">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/作业管理.png" class='image1' bindtap="toHomework">
+</image>
+</view>
+<view class="pic2">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/课程管理.png" class='image2' bindtap="toClassManagement">
+</image>
+</view>
+
+<view class="pic3">
+<image src="cloud://it-cloud-hdrd7.6974-it-cloud-hdrd7-1300036058/image/learn/四六级.png" class='image3' bindtap="toWordTutor"></image>
+</view>
+</view>
+
+<view class="button1">
+<view>
+<text class="text4">作业管理</text>
+</view>
+<view>
+<text class="text5">课程管理</text>
+</view>
+<view>
+<text class="text6">四六级</text>
+</view>
+</view>
+</view>

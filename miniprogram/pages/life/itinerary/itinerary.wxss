@@ -1,0 +1,211 @@
+/* miniprogram/pages/life/ininerary/ininerary.wxss */
+.h1{
+  line-height: 50px;
+  text-align: center;
+  background-color: white;
+  font-weight: bold;
+}
+.in{
+  margin-top: 5px;
+  border-block-end-color: bisque;
+}
+.t{
+  margin-left: 40%;
+}
+.tt{
+  margin-left: 33%;
+}
+.zhanwei{
+  height: 80px;
+  background-color: white;
+}
+
+.weui-cell-third{
+  background: #fff;
+}
+.page__title{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.weui-cell-list{
+  background: #fff;
+  margin: 5px 50px 5px 50px;
+}
+.weui-cell-line{
+/* width: 100px; */
+  margin-left: 50%;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  height: 130px; 
+  background: #fff;
+}
+.weui-cell-line1{
+/* width: 100px; */
+  margin-right: 50%;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  height: 130px; 
+  background: #fff
+}
+.weui-cell-circle{
+  margin-left: 48%;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  border-color: blue;
+}
+.weui-cell-time{
+  /* width: 50px; */
+  float: left;
+  font-size:14px;
+  padding-left: 15px;
+  width: 72px;
+  position: relative;
+  right: 60px;
+  z-index: 1;
+}
+.weui-cell-time1{
+  /* width: 50px; */
+  float: right;
+  font-size:14px;
+  padding-left: 15px;
+  width: 72px;
+  position: relative;
+  left: 80px;
+  z-index: 1;
+}
+.weui-cell-event{
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.weui-cell-name{
+font-size:14px;
+height:23px;
+margin-left: 100px;
+z-index: 1;
+
+}
+.weui-cell-name1{
+font-size:14px;
+height:23px;
+margin-right: 100px;
+z-index: 1;
+}
+
+page{
+  background: #f3f7f7;
+}
+.select_box{
+  background: #fff;
+  width: 80%;
+  margin: 30rpx auto;
+  position: relative;
+  text-align: center;
+}
+.select{
+  box-sizing: border-box;
+  width: 100%;
+  height: 70rpx;
+  border:1px solid #efefef;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  background: white;
+}
+.select_text{
+  font-size: 30rpx;
+  flex: 1;
+  background: white;
+}
+.select_img{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  transition:transform 0.3s;
+}
+.select_img_rotate{
+  transform:rotate(180deg); 
+}
+.option_box{
+  position: absolute;
+  top: 70rpx;
+  width: 100%;
+  border:1px solid #efefef;
+  box-sizing: border-box;
+  height: 0;
+  overflow-y: auto;
+  border-top: 0;
+  transition: height 0.3s;
+  z-index: 2;
+}
+.option{
+  display: block;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+  background: white;
+  padding: 10rpx;
+}
+.select_icon{
+  height: 20px;
+  width: 20px;
+}
+
+.tabBar-icon{
+  width:54rpx;
+  height: 54rpx;
+}
+.tabBar{
+  width:100%;
+  position: fixed;
+  bottom:0;
+  padding:10rpx;
+  margin-left:-4rpx;
+  background:#F7F7FA;
+  font-size:24rpx;
+  color:#8A8A8A;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #aaa; 
+  z-index: 9999;
+}
+
+ .tabBar-item{
+  float:left;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+/*当前字体颜色*/
+.tabBartext{
+  color: black;
+}
+.navigator-hover{
+  background-color: rgba(0, 0, 0, 0);
+}
+.weui-cell-del{
+  background: #ff9900;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border:3px solid black;
+  border-radius: 50%;
+  position: relative;
+  right: 100px;
+  bottom: 40px;
+}
+.weui-cell-del1{
+  background: #ff9900;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border:3px solid black;
+  border-radius: 50%;
+  position: relative;
+  left: 160px;
+  bottom: 40px;
+}

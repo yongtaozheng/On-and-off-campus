@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/learn/learn/learn",
+    "pages/learn/ClassManagement/ClassManagement",
+    "pages/learn/homework/homework",
+    "pages/index/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/learn/ClassManagement/myCourse/myCourse",
+    "pages/learn/ClassManagement/courseDetail/courseDetail",
+    "pages/life/itinerary/itinerary",
+    "pages/life/life",
+    "pages/life/meeting/meeting",
+    "pages/learn/ClassManagement/cheakCourse/cheakCourse",
+    "pages/sport/sport",
+    "pages/life/map/map",
+    "pages/life/map/allview/allview",
+    "pages/index/test/test",
+    "pages/life/time/time",
+    "pages/life/time/clock/clock",
+    "pages/life/time/record/record",
+    "pages/learn/ClassManagement/courseHomework/courseHomework",
+    "pages/learn/ClassManagement/viewHomework/viewHomework",
+    "pages/learn/ClassManagement/homeworkDetail/viewHomeworkClass",
+    "pages/learn/ClassManagement/homeworkDetail/viewClassHomework",
+    "pages/learn/WordTutor/WordTutor",
+    "pages/learn/WordTutor/study/study",
+    "pages/sport/plan/plan",
+    "pages/sport/clock/clock",
+    "pages/sport/clock/record/record",
+    "pages/my/my",
+    "pages/learn/ClassManagement/courseDetail/preview"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#66ccff",
+    "navigationBarTitleText": "校里校外",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#6cf",
+    "list": [
+      {
+        "pagePath": "pages/learn/learn/learn",
+        "text": "学习",
+        "iconPath": "icon/学生.png",
+        "selectedIconPath": "icon/study.png"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "text": "生活",
+        "iconPath": "icon/生活.png",
+        "selectedIconPath": "icon/live1.png"
+      },
+      {
+        "pagePath": "pages/sport/sport",
+        "text": "运动",
+        "iconPath": "icon/运动.png",
+        "selectedIconPath": "icon/sport.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icon/my.png",
+        "selectedIconPath": "icon/my1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

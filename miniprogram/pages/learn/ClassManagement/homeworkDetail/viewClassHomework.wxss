@@ -1,0 +1,68 @@
+page{
+  background-color: #fff;
+}
+
+.title1 {
+  font-size: 20px;
+}
+
+.tab {
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.topTabSwiper {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #6cf;
+  color: #6cf;
+}
+
+.book-list{
+  height: 50rpx;
+  width: 100%;
+  display: flex;
+}
+
+
+.stunum{
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.detail{
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.detail1{
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.line {
+  position: relative;
+  background: #e0e3da;
+  width: 100%;
+  /* margin-left: 5%; */
+  height: 5rpx;
+  z-index: 10;
+}

@@ -1,0 +1,4 @@
+view{
+  justify-content: center;
+  text-align: center;
+}
